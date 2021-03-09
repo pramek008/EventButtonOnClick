@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LoginForm(Constraint Layout)</string>
+    <string name="tEmail">E - Mail</string>
+    <string name="tPassword">Password</string>
+    <string name="bSignin">Sign In</string>
+    <string name="rLogin">Login</string>
+</resources>
