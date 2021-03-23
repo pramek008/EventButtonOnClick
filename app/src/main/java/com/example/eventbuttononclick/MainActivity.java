@@ -2,11 +2,12 @@ package com.example.eventbuttononclick;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -17,25 +18,40 @@ public class MainActivity extends AppCompatActivity
     String nama, pass;
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.mnDaftar)
+        {
+            Intent i = new Intent(getApplicationContext(), DaftarActivity.class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnLogin=findViewById(R.id.btSign);
-        edemail=findViewById(R.id.inEmail);
-        edpass=findViewById(R.id.inPass);
+        btnLogin=findViewById(R.id.fabSimpan);
+        edemail=findViewById(R.id.regNama);
+        edpass=findViewById(R.id.regPass);
 
         btnLogin.setOnClickListener(new View.OnClickListener()
         {
-            String mail1,sandi;
+            String mail,sandi;
             @Override
             public void onClick(View v)
             {
-                //database:)
-                //data1
-                mail1 = "Eka Nova Pramudya";
-                sandi = "naxpwr";
+                Bundle bundle2 = getIntent().getExtras();
+                mail = bundle2.getString("mail");
+                sandi = bundle2.getString("pass");
 
                 nama = edemail.getText().toString();
                 pass = edpass.getText().toString();
@@ -45,20 +61,7 @@ public class MainActivity extends AppCompatActivity
                             "Mohon ISI Username dan Password",Toast.LENGTH_LONG);
                     k.show();
                 }
-//                if(nama .equals(mail1) || sandi.equals(pass))
-//                {
-//                    if(nama .equals (mail1)) {
-//                        Toast bm = Toast.makeText(getApplicationContext(),
-//                                "Password SALAH",Toast.LENGTH_SHORT);
-//                        bm.show();
-//                    }
-//                    else {
-//                        Toast bp = Toast.makeText(getApplicationContext(),
-//                                "Email SALAH",Toast.LENGTH_LONG);
-//                        bp.show();
-//                    }
-//                }
-                else if(nama.equals(mail1) && sandi.equals(pass))
+                else if(nama.equals(mail) && sandi.equals(pass))
                 {
                     Toast b = Toast.makeText(getApplicationContext(),
                             "Login BERHASIL",Toast.LENGTH_LONG);
