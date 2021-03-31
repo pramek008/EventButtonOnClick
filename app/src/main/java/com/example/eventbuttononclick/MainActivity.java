@@ -49,9 +49,12 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Bundle bundle2 = getIntent().getExtras();
-                mail = bundle2.getString("mail");
-                sandi = bundle2.getString("pass");
+//                Bundle bundle2 = getIntent().getExtras();
+//                mail = bundle2.getString("mail");
+//                sandi = bundle2.getString("pass");
+
+                mail = "eka@mail";
+                sandi = "eka1";
 
                 nama = edemail.getText().toString();
                 pass = edpass.getText().toString();
@@ -71,7 +74,7 @@ public class MainActivity extends AppCompatActivity
                     bundle.putString("data1", nama.trim());
                     bundle.putString("data2", pass.trim());
 
-                    Intent intent = new Intent(getApplicationContext(), Activitykedua.class);
+                    Intent intent = new Intent(getApplicationContext(), Home_Activity.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
                 }

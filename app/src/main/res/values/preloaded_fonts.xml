@@ -4,5 +4,6 @@
         <item>@font/rambla_bold_italic</item>
         <item>@font/rasa</item>
         <item>@font/rasa_light</item>
+        <item>@font/rasa_semibold</item>
     </array>
 </resources>
