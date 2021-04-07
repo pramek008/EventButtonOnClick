@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                mail = "eka@mail";
-                sandi = "eka1";
+                mail = "admin@mail.com";
+                sandi = "123456";
 
                 nama = edemail.getText().toString();
                 pass = edpass.getText().toString();
