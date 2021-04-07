@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,7 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class DaftarActivity extends AppCompatActivity {
 
     EditText edtNama,edtAlamat,edtEmail,edtPass,edtRepass;
-
+    Button btnDaftar, btnCencel;
     FloatingActionButton fab;
 
     @Override
@@ -29,9 +30,11 @@ public class DaftarActivity extends AppCompatActivity {
         edtAlamat=findViewById(R.id.regAlamat);
         edtPass=findViewById(R.id.regPass);
         edtRepass=findViewById(R.id.regPass2);
-        fab=findViewById(R.id.fabSimpan);
+//        fab=findViewById(R.id.fabSimpan);
+        btnDaftar=findViewById(R.id.daftarBtn);
+        btnCencel=findViewById(R.id.cencelBtn);
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        btnDaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(edtNama.getText().toString().isEmpty()||
@@ -67,6 +70,15 @@ public class DaftarActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnCencel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

@@ -58,6 +58,9 @@ public class ActivityLihatData extends AppCompatActivity {
                 tvnama.setText("Jati Pohon");
                 tvnomor.setText("49819818919494");
                 break;
+            case "Aland":
+                tvnama.setText("Aland Nak Epic");
+                tvnomor.setText("06510650650650");
 
         }
     }

@@ -7,19 +7,17 @@
     android:orientation="vertical"
     tools:context=".Home_Activity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/datakontak"
-        android:layout_gravity="center_horizontal"
-        android:textSize="14pt"/>
+    <SearchView
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="25pt"
+        android:layout_margin="1dp" />
 
     <ListView
-        android:layout_marginTop="20dp"
         android:id="@+id/listKontak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:divider="@color/devider"
-        android:dividerHeight="1dp"/>
+        android:dividerHeight="1dp" />
 </LinearLayout>
